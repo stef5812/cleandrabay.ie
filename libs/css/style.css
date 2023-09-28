@@ -1,0 +1,302 @@
+/* Add this media query to stack flex items vertically on small screens */
+@media (max-width: 767px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .flex-item img,
+  .flex-item p {
+    max-width: 100%;
+  }   
+
+  header, .navbar, .navbar-brand, .navMenu-l, .dot {
+    display: none;
+  }
+
+  .mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #fff;
+    height: 50px;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #faf7f7;
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: rgb(7, 0, 0);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: rgb(249, 249, 249);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .active {
+    background-color: #098A9F;
+    color: white;
+    width: 250px;
+    border-radius: 25px;
+  }
+
+  .mob-logo {
+    position: absolute;
+    top: 18%;
+    right: 20px; /* Adjust the value to control the distance from the right side */
+    /* transform: translateY(-50%); */
+  }  
+
+}
+/* ... (your existing CSS code) ... */
+
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif+Pro&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Serif Pro', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the content stretches to fill the viewport height */
+  }
+
+  #rev-h2 {
+    padding: 50px 0px px 0px;
+  }  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    background-color: #098A9F;
+    text-align: center;
+    padding: 5px;
+  }
+
+  main {
+    flex: 1;
+    padding: 20px 20px; /* Add top and bottom padding to avoid overlapping with header and footer */
+    overflow-y: auto; /* Allow the main content to scroll if it overflows */
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;    
+    background-color: #098A9F;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    /* margin-top: auto; Push the footer to the bottom */
+  }  
+
+  .mob-logo {
+    display: none;
+  }
+
+  .navbar-brand {
+    position: absolute;
+    top: 18%;
+    right: 20px; /* Adjust the value to control the distance from the right side */
+    /* transform: translateY(-50%); */
+  }
+
+  .navbar-brand img {
+    width: 350px; /* Adjust the width as needed */
+    max-width: 100%; /* Ensure the logo scales down while maintaining aspect ratio */
+  }  
+  
+  .logo-image {
+    padding-top: 4px;
+    max-width: 25%; /* Adjust the maximum height of the logo image to make it 2 times bigger */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); Add a box shadow to the logo */
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Adjust the height as needed */
+    padding: 0 30px;
+    background-color: #f7f7f7;
+  }
+
+  /* Adjust the size of the logo for small screens */
+  .navbar-brand {
+    max-width: 30%; /* Set the maximum width to 25% of the container */
+    height: auto; /* Maintain the aspect ratio */
+    top: 8%;
+    right: -2%;
+  }  
+
+.navMenu-l {
+    position: absolute;
+    font-size: 20px;
+    font-size: 1vw;
+    top: 50%;
+    left: 20px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+.navMenu-l a {
+  color: #080808;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 30px; /* Add margin to the right side of each menu item */
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu-l a:hover {
+  color: #39C63A;
+}
+
+.navMenu .dot {
+    width: 5px;
+    height: 5px;
+    background: #D61E39;
+    border-radius: 50%;
+    opacity: 1;
+    margin: -44px;
+    transform: translateX(-30px);
+    transition: all 0.2s ease-in-out;
+  }
+
+.navMenu-l a:nth-child(1):hover ~ .dot {
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu-l a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(110px);
+  transform: translateX(110px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu-l a:nth-child(3):hover ~ .dot {
+  -webkit-transform: translateX(200px);
+  transform: translateX(200px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu-l a:nth-child(4):hover ~ .dot {
+  -webkit-transform: translateX(285px);
+  transform: translateX(285px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.resizable-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 50px;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px; /* Create some space between header and the first flex-item */
+  }
+  
+  .flex-item {
+    flex-basis: calc(50% - 10px);
+    flex: 0 0 calc(50% - 50px);
+    margin: 5x;
+    background-color: #f0f0f0;
+    padding: 20px;
+    height: 200%;
+    width: 250px;
+  }
+  
+  .flex-item img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+  }
+
+ 
+  /* New CSS for the image container */
+  .image-container {
+    flex-basis: 70%; /* Set the width of the image container to 70% of the available space */
+    max-width: 70%; /* Add a max-width to the image container to avoid overflow */
+    padding: 10px; /* Add some padding to the image container */
+  }
+  
+  /* New CSS for the text container */
+  .text-container {
+    flex: 1; /* Set the text container to occupy the remaining space in the flex item */
+    padding: 10px; /* Add some padding to the text container */
+  }
+  
+  .main {width: 100%;}
+  .flex-container {width: 100%;}
+  .flex-item {width: 100%;}
+
+  .flex-item img,
+  .flex-item p {
+    max-width: 100%;
+  }     
+
+  .navMenu-l {
+      top: 80%;
+      left: 20%;
+  }  
+
+/* Add this media query to stack flex items vertically on small screens */
